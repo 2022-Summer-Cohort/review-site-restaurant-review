@@ -19,7 +19,7 @@ Build a dynamic web application with a MVC architecture.
   - Upon submission we should have an application that starts and passes all tests in the test folder.
 
 # Group Members
-## Blake
-## Abdulkerim
-## Patrick
-## Mohamed
+### Blake
+### Abdulkerim
+### Patrick
+### Mohamed
