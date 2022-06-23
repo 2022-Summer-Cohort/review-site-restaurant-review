@@ -12,7 +12,6 @@ public class Restaurant {
     private long id;
     private String name;
     // other fields for classification?
-
     @ManyToOne
     private Restaurant restaurant;
     @ManyToMany

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
@@ -12,11 +13,14 @@ public class Cuisine {
     @GeneratedValue
     private long id;
     private String foodType;
-    @OneToMany(mappedBy = "cuisine")
-    private Collection<Restaurant> restaurants;
+    private String location;
 
-    public Cuisine(String foodType) {
+//    @OneToMany(mappedBy = "cuisine")
+//    private Collection<Restaurant> restaurants;
+
+    public Cuisine(String foodType, String location) {
         this.foodType = foodType;
+//        this.restaurants = new ArrayList<>();
     }
 
     public Cuisine() {
@@ -26,7 +30,7 @@ public class Cuisine {
         return foodType;
     }
 
-    public Collection<Restaurant> getRestaurants() {
-        return restaurants;
-    }
+//    public Collection<Restaurant> getRestaurants() {
+//        return restaurants;
+//    }
 }
