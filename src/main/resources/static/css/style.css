@@ -1,22 +1,55 @@
-*{
-    margin: 5;
-    padding: 5;
-    
+:root {
+    --color1: #333;
+    --color2: #111;
+    --color3: #044faa;
+    --color4: #0049a3;
 }
 
-body{
-    background-image: url("/images/nightcafe.jpg");
-    background-color: #cccccc;
-    background-size: cover;
-    
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
-h1 {
-    color: rgb(235, 29, 29);
+
+body {
+    background-color: white;
 }
-li {
-    color: aliceblue;
+
+/* Nav bar styling across all pages */
+
+nav ul {
+    background-color: var(--color1);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
-p { color: blue 
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    font-size: 55px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+    background-color: var(--color4);
+}
+
+.active {
+    background-color: var(--color3);
 }
 
 footer {
@@ -29,9 +62,7 @@ footer {
 
 .flex-grid {
     display: flex;
-  }
-  .col {
+}
+.col {
     flex: 1;
-  }
-
-  
+}
