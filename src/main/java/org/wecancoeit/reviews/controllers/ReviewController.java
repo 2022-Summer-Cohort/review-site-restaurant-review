@@ -1,19 +1,16 @@
 package org.wecancoeit.reviews.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.wecancoeit.reviews.repos.reviewRepository;
+import org.wecancoeit.reviews.repos.ReviewRepository;
 
 
 
 @Controller
 public class ReviewController {
 
-    private reviewRepository reviewRepo;
+    private ReviewRepository reviewRepo;
 
-    public ReviewController(reviewRepository reviewRepo) {
+    public ReviewController(ReviewRepository reviewRepo) {
         this.reviewRepo = reviewRepo;
     }
 

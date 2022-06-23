@@ -13,13 +13,13 @@ public class Restaurant {
     private String name;
     // other fields for classification?
     @ManyToOne
-    private Restaurant restaurant;
+    private Cuisine cuisine;
     @ManyToMany
     private Collection<Review> reviews;
 
-    public Restaurant(String name, Restaurant restaurant, Review... reviews) {
+    public Restaurant(String name, Cuisine cuisine, Review... reviews) {
         this.name = name;
-        this.restaurant = restaurant;
+        this.cuisine = cuisine;
         this.reviews = Arrays.asList(reviews);
     }
 
@@ -38,8 +38,8 @@ public class Restaurant {
         return name;
     }
 
-    public Restaurant getRestaurant() {
-        return restaurant;
+    public Cuisine getCuisine() {
+        return cuisine;
     }
 
     public Collection<Review> getReviews() {

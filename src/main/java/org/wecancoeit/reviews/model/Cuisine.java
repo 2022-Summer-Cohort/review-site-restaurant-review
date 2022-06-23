@@ -30,6 +30,9 @@ public class Cuisine {
         return foodType;
     }
 
+    public String getLocation() {
+        return location;
+    }
 //    public Collection<Restaurant> getRestaurants() {
 //        return restaurants;
 //    }
