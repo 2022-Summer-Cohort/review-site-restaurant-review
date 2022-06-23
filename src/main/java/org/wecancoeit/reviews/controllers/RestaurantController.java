@@ -15,4 +15,16 @@ public class RestaurantController {
     public RestaurantController(RestaurantRepository restaurantRepo) {
         this.restaurantRepo = restaurantRepo;
     }
+
+    @RequestMapping("/{id}")
+    public String showRestaurant(Model model, @PathVariable Long id){
+        model.addAttribute("LosGuachos", restaurantRepo.findById(id).get());
+        return "restaurant";
+    }
+
+    @RequestMapping("/")
+    public String showAllRestaurants(Model model){
+        model.addAttribute("restaurants", restaurantRepo.findAll());
+        return "allRestaurants";
+    }
 }

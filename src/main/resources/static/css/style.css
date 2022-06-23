@@ -1,7 +1,37 @@
 *{
     margin: 5;
     padding: 5;
+    
 }
+
 body{
-    background-color: turquoise;
+    background-image: url("/images/nightcafe.jpg");
+    background-color: #cccccc;
+    background-size: cover;
+    
 }
+h1 {
+    color: rgb(235, 29, 29);
+}
+li {
+    color: aliceblue;
+}
+p { color: blue 
+}
+
+footer {
+    position: absolute;
+    bottom:0;
+    background-color: rgba(192, 145, 153, 0.541);
+    text-align: center;
+    width: 100vw;
+}
+
+.flex-grid {
+    display: flex;
+  }
+  .col {
+    flex: 1;
+  }
+
+  
