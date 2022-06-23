@@ -22,6 +22,8 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        //All objects are just for the sake of orientation and can/will be changed
+
         Cuisine mexican = new Cuisine("Mexican", "Powell, Ohio");
         cuisineRepo.save(mexican);
         Cuisine italian = new Cuisine ("Italian", "Dublin, Ohio");
