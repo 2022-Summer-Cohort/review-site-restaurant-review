@@ -15,12 +15,12 @@ public class Cuisine {
     private String foodType;
     private String location;
 
-//    @OneToMany(mappedBy = "cuisine")
-//    private Collection<Restaurant> restaurants;
+    @OneToMany(mappedBy = "cuisine")
+    private Collection<Restaurant> restaurants;
 
     public Cuisine(String foodType, String location) {
         this.foodType = foodType;
-//        this.restaurants = new ArrayList<>();
+        this.restaurants = new ArrayList<>();
     }
 
     public Cuisine() {
@@ -33,7 +33,7 @@ public class Cuisine {
     public String getLocation() {
         return location;
     }
-//    public Collection<Restaurant> getRestaurants() {
-//        return restaurants;
-//    }
+    public Collection<Restaurant> getRestaurants() {
+        return restaurants;
+    }
 }
