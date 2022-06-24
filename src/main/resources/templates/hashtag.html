@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${review.rating}">Name</title>
+  <link rel="stylesheet"  href="/css/style.css">
+</head>
+<body>
+<h1 th:text="${review.rating}"></h1>
+<ul>
+  <li th:each="book: ${hashtag.restaurant}">
+    <a th:text="${restaurant.name}" th:href="'/restaurants/' + ${restaurant.id}"></a>
+  </li>
+</ul>
+</body>
+</html>

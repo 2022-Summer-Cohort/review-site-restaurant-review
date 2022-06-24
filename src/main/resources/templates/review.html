@@ -3,10 +3,10 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${review.rating}">Title</title>
+    <title th:text="${review.rating}">Name</title>
 </head>
 <body>
-<h1 th:text="${review.rating}">Title</h1>
+<h1 th:text="${review.rating}">Name</h1>
 <ul>
     <li th:each="restaurant: ${review.restaurants}">
         <a th:text="${restaurant.name}" th:href="'/restaurants/' + ${restaurant.id}"></a>a>
