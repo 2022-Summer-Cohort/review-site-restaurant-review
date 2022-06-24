@@ -26,10 +26,27 @@ p {
 section > img,
 section > button,
 section > a {
-  width: 50%;
-  display: inline-block;
-  padding: 20px;
+  width: 25%;
+  display: flexbox;
+  padding: 10px;
+  justify-content: ;
+  top: 100px;
 }
+@media screen and (min-width: 40em) {
+    body, main, section {
+      display: flex;
+      }
+    body, section {
+      flex-direction: column;
+    }
+    header, nav {
+      order: -1;
+    }
+  }
+  main > section {
+    flex: 1; /* is the same as */
+    flex: 1 0 0%;
+  }
 
 /* Nav bar styling across all pages */
 
@@ -42,6 +59,7 @@ nav ul {
     position: fixed;
     top: 0;
     width: 100%;
+    opacity: 0.85;
 }
 
 nav li {
@@ -55,6 +73,7 @@ nav li a {
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
+    
 }
 
 nav li a:hover:not(.active) {
@@ -63,6 +82,7 @@ nav li a:hover:not(.active) {
 
 .active {
     background-color: var(--color3);
+    
 }
 
 footer {
