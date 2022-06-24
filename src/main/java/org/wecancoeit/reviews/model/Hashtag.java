@@ -13,8 +13,8 @@ public class Hashtag {
     @GeneratedValue
     private long id;
     private String name;
-//    @ManyToMany(mappedBy = "hashtags")
-//    private Collection<Restaurant> restaurants;
+    @ManyToMany(mappedBy = "hashtags")
+    private Collection<Restaurant> restaurants;
 
     public Hashtag(String name) {
         this.name = name;
@@ -31,7 +31,7 @@ public class Hashtag {
         return name;
     }
 
-//    public Collection<Restaurant> getRestaurants() {
-//        return restaurants;
-//    }
+    public Collection<Restaurant> getRestaurants() {
+        return restaurants;
+    }
 }

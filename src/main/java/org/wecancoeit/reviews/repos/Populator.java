@@ -7,6 +7,8 @@ import org.wecancoeit.reviews.model.Hashtag;
 import org.wecancoeit.reviews.model.Restaurant;
 import org.wecancoeit.reviews.model.Review;
 
+import java.util.ArrayList;
+
 @Component
 public class Populator implements CommandLineRunner {
 
@@ -45,15 +47,6 @@ public class Populator implements CommandLineRunner {
         Review poor = new Review("Poor");
         reviewRepo.save(poor);
 
-        Restaurant chileVerde = new Restaurant("Chile Verde", "Powell, Ohio", mexican, good);
-        restaurantRepo.save(chileVerde);
-        Restaurant theOliveGarden = new Restaurant("The Olive Garden", "Columbus, Ohio", italian, best);
-        restaurantRepo.save(theOliveGarden);
-        Restaurant eatGreek = new Restaurant("Eat Greek", "columbus, Ohio", mediterranean,  good);
-        restaurantRepo.save(eatGreek);
-        Restaurant blueGinger = new Restaurant("Blue Ginger", "Dublin, Ohio", mexican, poor);
-        restaurantRepo.save(blueGinger);
-
         Hashtag bestInColumbus = new Hashtag("#BestInColumbus");
         hashtagRepo.save(bestInColumbus);
         Hashtag poorService = new Hashtag("#PoorService");
@@ -62,6 +55,23 @@ public class Populator implements CommandLineRunner {
         hashtagRepo.save(bestService);
         Hashtag greatTakeOut = new Hashtag("#GreatTakeOut");
         hashtagRepo.save(greatTakeOut);
+
+        ArrayList<Hashtag> testArrayList1 = new ArrayList<>();
+        testArrayList1.add(bestInColumbus);
+        ArrayList<Hashtag> testArrayList2 = new ArrayList<>();
+        testArrayList1.add(poorService);
+        ArrayList<Hashtag> testArrayList3 = new ArrayList<>();
+        testArrayList1.add(greatTakeOut);
+
+        Restaurant chileVerde = new Restaurant("Chile Verde", "Powell, Ohio", mexican, testArrayList1, good);
+        restaurantRepo.save(chileVerde);
+        Restaurant theOliveGarden = new Restaurant("The Olive Garden", "Columbus, Ohio", italian, testArrayList2, best);
+        restaurantRepo.save(theOliveGarden);
+        Restaurant eatGreek = new Restaurant("Eat Greek", "columbus, Ohio", mediterranean, testArrayList3, good);
+        restaurantRepo.save(eatGreek);
+        Restaurant blueGinger = new Restaurant("Blue Ginger", "Dublin, Ohio", mexican, testArrayList1, poor);
+        restaurantRepo.save(blueGinger);
+
 
 
     }

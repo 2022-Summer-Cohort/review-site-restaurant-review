@@ -1,6 +1,7 @@
 package org.wecancoeit.reviews.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -16,12 +17,15 @@ public class Restaurant {
     @ManyToOne
     private Cuisine cuisine;
     @ManyToMany
+    private ArrayList<Hashtag> hashtags;
+    @ManyToMany
     private Collection<Review> reviews;
 
-    public Restaurant(String name, String location, Cuisine cuisine, Review... reviews) {
+    public Restaurant(String name, String location, Cuisine cuisine, ArrayList<Hashtag> hashtags, Review... reviews) {
         this.name = name;
         this.location = location;
         this.cuisine = cuisine;
+        this.hashtags = hashtags;
         this.reviews = Arrays.asList(reviews);
     }
 
@@ -46,6 +50,10 @@ public class Restaurant {
 
     public Cuisine getCuisine() {
         return cuisine;
+    }
+
+    public ArrayList<Hashtag> getHashtags() {
+        return hashtags;
     }
 
     public Collection<Review> getReviews() {
