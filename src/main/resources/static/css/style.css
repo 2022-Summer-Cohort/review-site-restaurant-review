@@ -16,6 +16,19 @@
 
 body {
     background-color: white;
+    background-image: url("/images/nightcafe.jpg");
+    background-size: cover;
+    
+}
+p {
+    color:rgb(221, 221, 221);
+}
+section > img,
+section > button,
+section > a {
+  width: 50%;
+  display: inline-block;
+  padding: 20px;
 }
 
 /* Nav bar styling across all pages */

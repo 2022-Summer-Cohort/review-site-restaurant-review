@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Favorite Cuisines</title>
+    <link rel="stylesheet"  href="/css/style.css">
+
+</head>
+<body>
+    <div th:replace="fragments.html :: nav"></div>
+    <br>
+
+    <h1 th:text="${cuisine.foodType} + ' Cuisine Scene'"></h1>
+    <hr>
+    <div class="container">
+        <ul>
+            <li th:each="restaurant:${cuisine.restaurants}" th:text="${restaurant.name}"></li>
+        </ul>
+    </div>
+    <hr>
+    <form action="/restaurants/add" method="POST">
+        <label for="name">name:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <input type="hidden" id="location" name="location" th:value="${cuisine.location}">
+        <input type="submit" value="Submit">
+    </form>
+    <div th:replace="fragments.html :: footer"></div>
+
+
+</body>
+</html>

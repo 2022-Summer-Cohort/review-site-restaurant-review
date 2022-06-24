@@ -1,6 +1,9 @@
 package org.wecancoeit.reviews.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancoeit.reviews.repos.ReviewRepository;
 
 
@@ -15,10 +18,10 @@ public class ReviewController {
     }
 
 
-//    @RequestMapping("/reviews/{id}")
-//    private String showReview(Model model, @PathVariable long id) {
-//        model.addAttribute("review", reviewRepo.findById(id).get());
-//        return "review";
-//    }
+    @RequestMapping("/reviews/{id}")
+    private String showReview(Model model, @PathVariable long id) {
+        model.addAttribute("review", reviewRepo.findById(id).get());
+        return "review";
+    }
 
 }

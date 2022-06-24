@@ -13,12 +13,13 @@ public class Review {
     @Id
     @GeneratedValue
     private long id;
-    private String name;
+    private String rating;
+
     @ManyToMany(mappedBy = "reviews")
     private Collection<Restaurant> restaurants;
 
-    public Review(String name) {
-        this.name = name;
+    public Review(String rating) {
+        this.rating = rating;
     }
 
     public Review() {
@@ -28,8 +29,8 @@ public class Review {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getRating() {
+        return rating;
     }
 
     public Collection<Restaurant> getRestaurants() {
