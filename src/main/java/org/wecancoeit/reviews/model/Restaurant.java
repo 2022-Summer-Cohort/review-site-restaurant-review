@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Restaurant {
@@ -17,11 +18,11 @@ public class Restaurant {
     @ManyToOne
     private Cuisine cuisine;
     @ManyToMany
-    private ArrayList<Hashtag> hashtags;
+    private List<Hashtag> hashtags;
     @ManyToMany
     private Collection<Review> reviews;
 
-    public Restaurant(String name, String location, Cuisine cuisine, ArrayList<Hashtag> hashtags, Review... reviews) {
+    public Restaurant(String name, String location, Cuisine cuisine, List<Hashtag> hashtags, Review... reviews) {
         this.name = name;
         this.location = location;
         this.cuisine = cuisine;
@@ -52,7 +53,7 @@ public class Restaurant {
         return cuisine;
     }
 
-    public ArrayList<Hashtag> getHashtags() {
+    public List<Hashtag> getHashtags() {
         return hashtags;
     }
 

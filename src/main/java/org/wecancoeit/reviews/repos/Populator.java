@@ -8,6 +8,8 @@ import org.wecancoeit.reviews.model.Restaurant;
 import org.wecancoeit.reviews.model.Review;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Component
 public class Populator implements CommandLineRunner {
@@ -56,14 +58,14 @@ public class Populator implements CommandLineRunner {
         Hashtag greatTakeOut = new Hashtag("#GreatTakeOut");
         hashtagRepo.save(greatTakeOut);
 
-        ArrayList<Hashtag> testArrayList1 = new ArrayList<>();
+        List<Hashtag> testArrayList1 = new ArrayList<>();
         testArrayList1.add(bestInColumbus);
-        ArrayList<Hashtag> testArrayList2 = new ArrayList<>();
+        List<Hashtag> testArrayList2 = new ArrayList<>();
         testArrayList1.add(poorService);
-        ArrayList<Hashtag> testArrayList3 = new ArrayList<>();
+        List<Hashtag> testArrayList3 = new ArrayList<>();
         testArrayList1.add(greatTakeOut);
 
-        Restaurant chileVerde = new Restaurant("Chile Verde", "Powell, Ohio", mexican, testArrayList1, good);
+        Restaurant chileVerde = new Restaurant("Chile Verde", "Powell, Ohio", mexican, testArrayList1, best);
         restaurantRepo.save(chileVerde);
         Restaurant theOliveGarden = new Restaurant("The Olive Garden", "Columbus, Ohio", italian, testArrayList2, best);
         restaurantRepo.save(theOliveGarden);

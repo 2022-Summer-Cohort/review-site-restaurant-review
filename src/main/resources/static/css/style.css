@@ -23,13 +23,18 @@ body {
 p {
     color:rgb(221, 221, 221);
 }
+h1 {
+    color:rgb(221, 221, 221);
+}
+li {
+    color:rgb(221, 221, 221);
+}
 section > img,
 section > button,
 section > a {
   width: 25%;
-  display: flexbox;
+  display: flex;
   padding: 10px;
-  justify-content: ;
   top: 100px;
 }
 @media screen and (min-width: 40em) {
@@ -38,6 +43,7 @@ section > a {
       }
     body, section {
       flex-direction: column;
+      
     }
     header, nav {
       order: -1;
@@ -57,7 +63,7 @@ nav ul {
     padding: 0;
     overflow: hidden;
     position: fixed;
-    top: 0;
+    top: 1;
     width: 100%;
     opacity: 0.85;
 }
@@ -94,8 +100,10 @@ footer {
 }
 
 .flex-grid {
-    display: flex;
+    display: flexbox;
 }
 .col {
     flex: 1;
 }
+
+
