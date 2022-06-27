@@ -151,6 +151,22 @@ nav li a:hover:not(.active) {
     font-size: 30px;
 }
 
+/* Hashtags page */
+.hashtags-flex {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.hashtags-list li {
+    color: coral;
+    font-weight: 600;
+    font-size: 50px;
+}
+
 /* Footer */
 
 footer {
