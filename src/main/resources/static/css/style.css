@@ -151,6 +151,8 @@ nav li a:hover:not(.active) {
     font-size: 30px;
 }
 
+/* Footer */
+
 footer {
     position: absolute;
     bottom:0;
