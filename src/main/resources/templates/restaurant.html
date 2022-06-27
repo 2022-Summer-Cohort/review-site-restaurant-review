@@ -19,6 +19,13 @@
             <a th:text="${review.rating}" th:href="'/reviews/' + ${review.id}"></a>
         </li>
     </ul>
+    <hr>
+    <br>
+    <form th:action="'/restaurants/' + ${LosGauchos.id}+ '/addReview'" method="post">
+        <label for="reviewID">Leave a Review</label>
+        <input type="text" name="review" id="reviewID">
+            <input type="submit">
+    </form>
 </div>
 <div th:replace="fragments.html :: footer"></div>
 </body>
