@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>The Cuisine Scene</title>
+    <link rel="stylesheet"  href="/css/style.css">
+
+</head>
+<body>
+
+<div th:replace="fragments.html :: nav"></div>
+<br>
+<h1>Where food catagories tell their stories</h1>
+<div class="container">
+    <br>
+    <br>
+    <div class="cuisines">
+
+        <div th:each="cuisine: ${cuisines}">
+            <h2 th:text="${cuisine.foodType}">Mexican </h2>
+            <ul>
+                <li th:each="restaurant: ${cuisine.restaurants}" >
+                    <a th:href="'/restaurants/' + ${restaurant.id}" th:text="${restaurant.name}"></a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <hr>
+    <br>
+    <br>
+    <div class="reviews" th:each="review: ${reviews}">
+
+        <h1 th:text="${review.rating}">Great!</h1>
+        <ul>
+            <li th:each="restaurant: ${review.restaurants}" th:text="${restaurant.name}"></li>
+        </ul>
+
+
+
+    </div>
+</div>
+
+<div th:replace="fragments.html :: footer"></div>
+
+</body>
+</html>

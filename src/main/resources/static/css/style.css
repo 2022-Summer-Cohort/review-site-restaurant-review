@@ -1,9 +1,8 @@
 :root {
     --color1: #333;
     --color2: #111;
-    --color3: coral;
-    --color4: rgb(255, 118, 68);
-    --color5: #dddddd;
+    --color3: #044faa;
+    --color4: #0049a3;
 }
 
 * {
@@ -51,15 +50,11 @@ section > a {
     }
   }
   main > section {
-    flex: 1;
+    flex: 1; /* is the same as */
     flex: 1 0 0%;
   }
 
 /* Nav bar styling across all pages */
-
-nav {
-    margin-bottom: 51px;
-}
 
 nav ul {
     background-color: var(--color1);
@@ -70,6 +65,7 @@ nav ul {
     position: fixed;
     top: 1;
     width: 100%;
+    opacity: 0.85;
 }
 
 nav li {
@@ -77,7 +73,7 @@ nav li {
 }
 
 nav li a {
-    font-size: 20px;
+    font-size: 55px;
     display: block;
     color: white;
     text-align: center;
@@ -94,80 +90,6 @@ nav li a:hover:not(.active) {
     background-color: var(--color3);
     
 }
-
-/* Cuisines page */
-
-.title-flex {
-    margin-top: 3%;
-    height: 100px;
-    background-color: var(--color5);
-    display: flex;
-    margin-left: 10%;
-    margin-right: 10%;
-    text-align: center;
-}
-
-.title-flex h1 {
-    width: 100%;
-    font-size: 60px;
-    display: block;
-    color: var(--color3);
-    padding: 15px 15px;
-    text-shadow: .04em .04em 0 rgb(151, 151, 151);
-}
-
-.cuisines-flex {
-    margin-top: 40px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.cuisines img {
-    padding: 5px;
-    filter: blur(2px) brightness(75%);
-    border: 5px solid var(--color3);
-}
-
-.cuisines {
-    position: relative;
-    text-align: center;
-}
-
-.text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 600;
-}
-
-.text a {
-    text-decoration: none;
-    color: white;
-    font-size: 30px;
-}
-
-/* Hashtags page */
-.hashtags-flex {
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.hashtags-list li {
-    color: coral;
-    font-weight: 600;
-    font-size: 50px;
-}
-
-/* Footer */
 
 footer {
     position: absolute;
