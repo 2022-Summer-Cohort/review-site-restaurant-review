@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Your Favorite Cuisines</title>
     <link rel="stylesheet"  href="/css/style.css">
-Colu
+
 </head>
 <body>
     <div th:replace="fragments.html :: nav"></div>
@@ -20,10 +20,10 @@ Colu
     </div>
     <hr>
     <form action="/restaurants/add" method="POST">
-        <label for="name">name:</label><br>
+        <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br>
 
-        <input type="hidden" id="location" name="location" th:value="${cuisine.location}">
+        <input type="hidden" id="foodType" name="foodType" th:value="${cuisine.foodType}">
         <input type="submit" value="Submit">
     </form>
     <div th:replace="fragments.html :: footer"></div>

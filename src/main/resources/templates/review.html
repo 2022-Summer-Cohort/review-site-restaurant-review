@@ -6,11 +6,14 @@
     <title th:text="${review.rating}">Name</title>
 </head>
 <body>
-<h1 th:text="${review.rating}">Name</h1>
+<h1 th:text="${review.rating}"></h1>
 <ul>
     <li th:each="restaurant: ${review.restaurants}">
-        <a th:text="${restaurant.name}" th:href="'/restaurants/' + ${restaurant.id}"></a>a>
+        <a th:text="${restaurant.name}" th:href="'/restaurants/' + ${restaurant.id}"></a>
 </ul>
-
+    <form action="restaurants/add" method="POST">
+          <input type="text" name="title" />
+          <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
