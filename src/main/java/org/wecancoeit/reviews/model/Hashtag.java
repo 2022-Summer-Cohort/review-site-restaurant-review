@@ -8,7 +8,6 @@ import java.util.Collection;
 
 @Entity
 public class Hashtag {
-
     @Id
     @GeneratedValue
     private long id;

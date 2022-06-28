@@ -1,8 +1,9 @@
 :root {
     --color1: #333;
     --color2: #111;
-    --color3: #044faa;
-    --color4: #0049a3;
+    --color3: coral;
+    --color4: rgb(255, 118, 68);
+    --color5: #dddddd;
 }
 
 * {
@@ -14,96 +15,103 @@
     scroll-behavior: smooth;
 }
 
-body {
-    background-color: white;
-    background-image: url("/images/nightcafe.jpg");
-    background-size: cover;
-    
+nav {
+    width: 100%;
+    background-color: #333;
 }
-p {
-    color:rgb(221, 221, 221);
-}
-h1 {
-    color:rgb(221, 221, 221);
-}
-li {
-    color:rgb(221, 221, 221);
-}
-section > img,
-section > button,
-section > a {
-  width: 25%;
-  display: flex;
-  padding: 10px;
-  top: 100px;
-}
-@media screen and (min-width: 40em) {
-    body, main, section {
-      display: flex;
-      }
-    body, section {
-      flex-direction: column;
-      
-    }
-    header, nav {
-      order: -1;
-    }
-  }
-  main > section {
-    flex: 1; /* is the same as */
-    flex: 1 0 0%;
-  }
 
-/* Nav bar styling across all pages */
-
-nav ul {
-    background-color: var(--color1);
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    position: fixed;
-    top: 1;
-    width: 100%;
-    opacity: 0.85;
 }
 
-nav li {
+li {
     float: left;
 }
 
-nav li a {
-    font-size: 55px;
+li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 20px;
+    padding: 20px 20px;
     text-decoration: none;
-    
+    font-size: 20px;
 }
 
-nav li a:hover:not(.active) {
-    background-color: var(--color4);
+li a:hover {
+    background-color: #111;
 }
 
 .active {
-    background-color: var(--color3);
-    
+    background-color: coral;
+}
+
+
+/* Titles for each page */
+
+.title-flex {
+    margin-top: 3%;
+    height: 100px;
+    background-color: var(--color5);
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.title-flex h1 {
+    width: 100%;
+    font-size: 50px;
+    display: block;
+    padding: 18px;
+    color: var(--color3);
+    text-shadow: .04em .04em 0 rgb(151, 151, 151);
+}
+
+.cuisines-flex {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.cuisines img {
+    padding: 5px;
+    filter: blur(2px) brightness(75%);
+    border: 5px solid var(--color3);
+}
+
+.cuisines {
+    position: relative;
+    text-align: center;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+}
+
+.text a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
 }
 
 footer {
-    position: absolute;
-    bottom:0;
-    background-color: rgba(192, 145, 153, 0.541);
+    width: 100%;
+    background-color: coral;
+    color: white;
+    height: 40px;
+    font-size: 24px;
     text-align: center;
-    width: 100vw;
+    position: fixed;
+    bottom: 0;
 }
-
-.flex-grid {
-    display: flexbox;
-}
-.col {
-    flex: 1;
-}
-
-

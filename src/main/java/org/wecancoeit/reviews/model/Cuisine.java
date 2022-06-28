@@ -14,12 +14,12 @@ public class Cuisine {
     private long id;
     private String foodType;
     private String location;
-
     @OneToMany(mappedBy = "cuisine")
     private Collection<Restaurant> restaurants;
 
     public Cuisine(String foodType, String location) {
         this.foodType = foodType;
+        this.location = location;
         this.restaurants = new ArrayList<>();
     }
 
@@ -33,6 +33,7 @@ public class Cuisine {
     public String getLocation() {
         return location;
     }
+
     public Collection<Restaurant> getRestaurants() {
         return restaurants;
     }
