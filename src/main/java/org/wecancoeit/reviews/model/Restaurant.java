@@ -13,36 +13,33 @@ public class Restaurant {
     @GeneratedValue
     private long id;
     private String name;
-    // other fields for classification?
     private String location;
+
     @ManyToOne
     private Cuisine cuisine;
     @ManyToMany
-    private List<Hashtag> hashtags;
-    @ManyToMany
-    private Collection<Review> reviews;
+    private Collection<Hashtag> hashtags;
 
-    public Restaurant(String name, String location, Cuisine cuisine, List<Hashtag> hashtags, Review... reviews) {
+    public Restaurant(String name, String location, Cuisine cuisine, Hashtag... hashtags) {
         this.name = name;
         this.location = location;
         this.cuisine = cuisine;
-        this.hashtags = hashtags;
-        this.reviews = Arrays.asList(reviews);
+        this.hashtags = Arrays.asList(hashtags);
     }
 
     public Restaurant() {
     }
 
-    public void addReview(Review review) {
-        reviews.add(review);
-    }
-
-    public long getId() {
-        return id;
+    public void addHashtag(Hashtag hashtag) {
+        hashtags.add(hashtag);
     }
 
     public String getName() {
         return name;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getLocation() {
@@ -53,11 +50,7 @@ public class Restaurant {
         return cuisine;
     }
 
-    public List<Hashtag> getHashtags() {
+    public Collection<Hashtag> getHashtags() {
         return hashtags;
-    }
-
-    public Collection<Review> getReviews() {
-        return reviews;
     }
 }

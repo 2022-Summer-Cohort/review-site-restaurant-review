@@ -6,51 +6,51 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.wecancoeit.reviews.model.Hashtag;
 import org.wecancoeit.reviews.model.Restaurant;
-import org.wecancoeit.reviews.model.Review;
+import org.wecancoeit.reviews.repos.HashtagRepository;
 import org.wecancoeit.reviews.repos.RestaurantRepository;
-import org.wecancoeit.reviews.repos.ReviewRepository;
 
 import java.util.Optional;
 
 @Controller
 @RequestMapping("/restaurants")
 public class RestaurantController {
-
-    private ReviewRepository reviewRepo;
     private RestaurantRepository restaurantRepo;
+    private HashtagRepository hashtagRepo;
 
-    public RestaurantController(ReviewRepository reviewRepo, RestaurantRepository restaurantRepo) {
-        this.reviewRepo = reviewRepo;
+    public RestaurantController(RestaurantRepository restaurantRepo, HashtagRepository hashtagRepo) {
         this.restaurantRepo = restaurantRepo;
+        this.hashtagRepo = hashtagRepo;
     }
 
     @RequestMapping("/{id}")
-    public String showRestaurant(Model model, @PathVariable Long id){
-        model.addAttribute("LosGuachos", restaurantRepo.findById(id).get());
+    public String showRestaurant(Model model, @PathVariable Long id) {
+        model.addAttribute("whatEverIwant", restaurantRepo.findById(id).get());
         return "restaurant";
     }
 
     @RequestMapping("/")
-    public String showAllRestaurants(Model model){
+    public String showAllRestaurants(Model model) {
         model.addAttribute("restaurants", restaurantRepo.findAll());
         return "allRestaurants";
     }
-    @PostMapping("/{id}/addReview")
-    public String addReviewToRestaurant(@PathVariable Long id, @RequestParam String review) {
+
+    @PostMapping("/{id}/addHashtag")
+    public String addHashtagToRestaurant(@PathVariable Long id, @RequestParam String hashtag) {
         Restaurant restaurant = restaurantRepo.findById(id).get();
-        Optional<Review> reviewOptional = reviewRepo.findByRatingIgnoreCase(review);
-        if (!reviewOptional.isPresent()) {
-            if (!restaurant.getReviews().contains(reviewOptional.get())) {
-                 restaurant.addReview(reviewOptional.get());
+        Optional<Hashtag> hashtagOptional = hashtagRepo.findByNameIgnoreCase(hashtag);
+        if (hashtagOptional.isPresent()) {
+            if (!restaurant.getHashtags().contains(hashtagOptional.get())) {
+                restaurant.addHashtag(hashtagOptional.get());
             }
-        }
-        else {
-            Review review1 = new Review(review);
-            reviewRepo.save(review1);
-            restaurant.addReview(review1);
+        } else {
+            Hashtag hashtag1 = new Hashtag(hashtag);
+            hashtagRepo.save(hashtag1);
+            restaurant.addHashtag(hashtag1);
         }
         restaurantRepo.save(restaurant);
-        return "redirect:/restaurants/"+id;
+
+        return "redirect:/restaurant/"+id;
     }
 }
