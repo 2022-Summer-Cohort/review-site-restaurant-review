@@ -13,14 +13,15 @@ public class Cuisine {
     @GeneratedValue
     private long id;
     private String foodType;
-    private String location;
+    private String imgUrl;
     @OneToMany(mappedBy = "cuisine")
     private Collection<Restaurant> restaurants;
 
-    public Cuisine(String foodType, String location) {
+    public Cuisine(String foodType, String imgUrl) {
         this.foodType = foodType;
-        this.location = location;
         this.restaurants = new ArrayList<>();
+        this.imgUrl = imgUrl;
+
     }
 
     public Cuisine() {
@@ -30,11 +31,14 @@ public class Cuisine {
         return foodType;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
     public Collection<Restaurant> getRestaurants() {
         return restaurants;
+    }
+    public long getId() {
+        return id;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
     }
 }

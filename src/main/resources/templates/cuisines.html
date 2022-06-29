@@ -9,7 +9,8 @@
 </head>
 
 <body>
-<nav>
+
+    <nav>
     <ul>
         <li>
             <a class="active" href="/">Cuisines</a>
@@ -18,7 +19,7 @@
             <a href="/hashtags.html">Hashtags</a>
         </li>
     </ul>
-</nav>
+    </nav>
 
 <header>
     <div class="title-flex">
@@ -28,48 +29,15 @@
 
 <div class="cuisines-flex">
     <div class="cuisines">
-        <img src="/images/mexicanfood.jpg" alt="Mexican Restaurants" width="300" height="185">
-        <div class="text"><a href="/">Mexican Restaurants</a></div>
-    </div>
-    <div class="cuisines">
-        <img src="/images/asianfood.jpg" alt="Asian Restaurants" width="300" height="185">
-        <div class="text">
-            <a href="/">Asian Restaurants</a>
-        </div>
-    </div>
-    <div class="cuisines">
-        <img src="/images/italian food.jpg" alt="Italian Restaurants" width="300" height="185">
-        <div class="text">
-            <a href="/">Italian Restaurants</a>
-        </div>
-    </div>
-    <div class="cuisines">
-        <img src="/images/mediterraneanfood.jpeg" alt="Mediterranean Restaurants" width="300" height="185">
-        <div class="text">
-            <a href="/">Mediterranean Restaurants</a>
-        </div>
-    </div>
-    <div class="cuisines">
-        <img src="/images/nightcafe.jpg" alt="Cafe Restaurants" width="300" height="185">
-        <div class="text">
-            <a href="/">Cafe Restaurants</a>
+
+        <div th:each="cuisine: ${cuisines}">
+            <a th:href="'/cuisines/' + ${cuisine.id}" th:text="${cuisine.foodType}"></a>
+            <img th:src="${cuisine.imgUrl}" width="300" height="185">
         </div>
     </div>
 </div>
 
-<!--    <div class="container">-->
-<!--        <br>-->
-<!--        <br>-->
-<!--        <div class="cuisines-flex">-->
-<!--            <div th:each="cuisine: ${cuisines}">-->
-<!--                <ul>-->
-<!--                    <li th:each="restaurant: ${cuisine.restaurants}">-->
-<!--                        <a th:href="'/restaurants/' + ${restaurant.id}" th:text="${restaurant.name}"></a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+
 
 
 <div th:replace="fragments.html :: footer"></div>
