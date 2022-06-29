@@ -18,13 +18,16 @@ public class Restaurant {
     @ManyToOne
     private Cuisine cuisine;
     @ManyToMany
-    private Collection<Hashtag> hashtags;
+    private List<Hashtag> hashtags;
+    @ManyToMany
+    private Collection<Review> reviews;
 
-    public Restaurant(String name, String location, Cuisine cuisine, Hashtag... hashtags) {
+    public Restaurant(String name, String location, Cuisine cuisine, List<Hashtag> hashtags, Review... reviews) {
         this.name = name;
         this.location = location;
         this.cuisine = cuisine;
-        this.hashtags = Arrays.asList(hashtags);
+        this.hashtags = hashtags;
+        this.reviews = Arrays.asList(reviews);
     }
 
     public Restaurant() {
@@ -50,7 +53,13 @@ public class Restaurant {
         return cuisine;
     }
 
-    public Collection<Hashtag> getHashtags() {
+    public List<Hashtag> getHashtags() {
         return hashtags;
+    }
+    public Collection<Review> getReviews() {
+        return reviews;
+    }
+
+    public void addReview(Review review) {
     }
 }
