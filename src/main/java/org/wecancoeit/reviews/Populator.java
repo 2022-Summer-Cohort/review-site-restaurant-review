@@ -33,13 +33,13 @@ public class Populator implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //All objects are just for the sake of orientation and can/will be changed
 
-        Cuisine mexican = new Cuisine("Mexican", "Powell, Ohio");
+        Cuisine mexican = new Cuisine("Mexican", "/images/mexicanfood.jpg");
         cuisineRepo.save(mexican);
-        Cuisine italian = new Cuisine("Italian", "Columbus, Ohio");
+        Cuisine italian = new Cuisine("Italian", "/images/italianfood.jpg");
         cuisineRepo.save(italian);
-        Cuisine mediterranean = new Cuisine("Mediterranean", "Columbus, Ohio");
+        Cuisine mediterranean = new Cuisine("Mediterranean", "/images/mediterraneanfood.jpeg");
         cuisineRepo.save(mediterranean);
-        Cuisine asian = new Cuisine("Asian", "Dublin, Ohio");
+        Cuisine asian = new Cuisine("Asian", "/images/asianfood.jpg");
         cuisineRepo.save(asian);
 
         Review best = new Review("Best");

@@ -19,13 +19,13 @@ public class CuisineController {
 
     @RequestMapping("/")
     public String showAllCuisines(Model model) {
-        model.addAttribute("cuisine", cuisineRepo.findAll());
+        model.addAttribute("cuisines", cuisineRepo.findAll());
         return "cuisines";
     }
 
-    @RequestMapping("/location/{locationName}")
-    public String showCuisinesByLocation(Model model, @PathVariable String locationName) {
-        model.addAttribute("cuisines", cuisineRepo.findByLocationIgnoreCase(locationName));
-        return "cuisines";
+    @RequestMapping("/cuisines/{id}")
+    public String findByID(Model model, @PathVariable long id) {
+        model.addAttribute("cuisine", cuisineRepo.findById(id).get());
+        return "cuisine";
     }
 }
