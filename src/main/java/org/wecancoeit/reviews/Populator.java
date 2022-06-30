@@ -33,17 +33,17 @@ public class Populator implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         // All the cuisines
-        Cuisine american = new Cuisine("American", "/images/mexicanfood.jpg");
+        Cuisine american = new Cuisine("American", "/images/american-food.jpg");
         cuisineRepo.save(american);
-        Cuisine chinese = new Cuisine("Chinese", "/images/mexicanfood.jpg");
+        Cuisine chinese = new Cuisine("Chinese", "/images/chinese-food.jpg");
         cuisineRepo.save(chinese);
-        Cuisine italian = new Cuisine("Italian", "/images/mexicanfood.jpg");
+        Cuisine italian = new Cuisine("Italian", "/images/italian-food.jpg");
         cuisineRepo.save(italian);
-        Cuisine mexican = new Cuisine("Mexican", "/images/mexicanfood.jpg");
+        Cuisine mexican = new Cuisine("Mexican", "/images/mexican-food.jpg");
         cuisineRepo.save(mexican);
-        Cuisine seafood = new Cuisine("Seafood", "/images/mexicanfood.jpg");
+        Cuisine seafood = new Cuisine("Seafood", "/images/seafood.jpg");
         cuisineRepo.save(seafood);
-        Cuisine pizza = new Cuisine("Pizza", "/images/mexicanfood.jpg");
+        Cuisine pizza = new Cuisine("Pizza", "/images/pizza.jpg");
         cuisineRepo.save(pizza);
 
         // All the reviews
@@ -117,75 +117,75 @@ public class Populator implements CommandLineRunner {
         marcellaHashtags.add(noContactDelivery);
 
         // Mexican Restaurants
-        Restaurant elVaquero = new Restaurant("El Vaquero Mexican Restaurant", "2195 Riverside Dr, Columbus, OH 43221", "/images/mexicanfood.jpg", mexican, elVaqueroHashtags, best);
+        Restaurant elVaquero = new Restaurant("El Vaquero Mexican Restaurant", "2195 Riverside Dr, Columbus, OH 43221", "/images/el-vaquero.jpg", mexican, elVaqueroHashtags, best);
         restaurantRepo.save(elVaquero);
-        Restaurant nada = new Restaurant("Nada", "220 W Nationwide Blvd, Columbus, OH 43215", "/images/mexicanfood.jpg", mexican, nadaHashtags, best);
+        Restaurant nada = new Restaurant("Nada", "220 W Nationwide Blvd, Columbus, OH 43215", "/images/nada.jpg", mexican, nadaHashtags, best);
         restaurantRepo.save(nada);
-        Restaurant miMexico = new Restaurant("Mi Mexico Restaurant", "4775 E Main St, Columbus, OH 43213", "/images/mexicanfood.jpg", mexican, miMexicoHashtags, best);
+        Restaurant miMexico = new Restaurant("Mi Mexico Restaurant", "4775 E Main St, Columbus, OH 43213", "/images/mi-mexico.jpg", mexican, miMexicoHashtags, best);
         restaurantRepo.save(miMexico);
-        Restaurant losAgavez = new Restaurant("Los Agavez Taqueria", "3166 N High St, Columbus, OH 43202", "/images/mexicanfood.jpg", mexican, losAgavezHashtags, best);
+        Restaurant losAgavez = new Restaurant("Los Agavez Taqueria", "3166 N High St, Columbus, OH 43202", "/images/los-agavez-taqueria.webp", mexican, losAgavezHashtags, best);
         restaurantRepo.save(losAgavez);
-        Restaurant localCantina = new Restaurant("Local Cantina Brewery District", "743 S High St, Columbus, OH 43206", "/images/mexicanfood.jpg", mexican, localCantinaHashtags, best);
+        Restaurant localCantina = new Restaurant("Local Cantina Brewery District", "743 S High St, Columbus, OH 43206", "/images/local-cantina.jpg", mexican, localCantinaHashtags, best);
         restaurantRepo.save(localCantina);
 
         // Italian Restaurants
-        Restaurant buca = new Restaurant("Buca di Beppo Italian Restaurant", "343 N Front St, Columbus, OH 43215", "/images/mexicanfood.jpg", italian, bucaHashtags, best);
+        Restaurant buca = new Restaurant("Buca di Beppo Italian Restaurant", "343 N Front St, Columbus, OH 43215", "/images/buca.jpg", italian, bucaHashtags, best);
         restaurantRepo.save(buca);
-        Restaurant dueAmici = new Restaurant("Due Amici", "67 E Gay St, Columbus, OH 43215", "/images/mexicanfood.jpg", italian, dueAmiciHashtags, best);
+        Restaurant dueAmici = new Restaurant("Due Amici", "67 E Gay St, Columbus, OH 43215", "/images/due-amici.jpeg", italian, dueAmiciHashtags, best);
         restaurantRepo.save(dueAmici);
-        Restaurant basiItalia = new Restaurant("Basi Italia", "811 Highland St, Columbus, OH 43215", "/images/mexicanfood.jpg", italian, basiItaliaHashtags, best);
+        Restaurant basiItalia = new Restaurant("Basi Italia", "811 Highland St, Columbus, OH 43215", "/images/basi-italia.jpg", italian, basiItaliaHashtags, best);
         restaurantRepo.save(basiItalia);
-        Restaurant pasqualone = new Restaurant("Pasqualone's", "5766 Emporium Square, Columbus, OH 43231", "/images/mexicanfood.jpg", italian, pasqualoneHashtags, best);
+        Restaurant pasqualone = new Restaurant("Pasqualone's", "5766 Emporium Square, Columbus, OH 43231", "/images/pasqualones.jpg", italian, pasqualoneHashtags, best);
         restaurantRepo.save(pasqualone);
-        Restaurant marcella = new Restaurant("Marcella's", "615 N High St, Columbus, OH 43215", "/images/mexicanfood.jpg", italian, marcellaHashtags, best);
+        Restaurant marcella = new Restaurant("Marcella's", "615 N High St, Columbus, OH 43215", "/images/marcellas.jpg", italian, marcellaHashtags, best);
         restaurantRepo.save(marcella);
 
         // American Restaurants
-        Restaurant capCity = new Restaurant("Cap City Fine Diner and Bar", "1299 Olentangy River Rd, Columbus, OH 43212", "/images/mexicanfood.jpg", american, bucaHashtags, best);
+        Restaurant capCity = new Restaurant("Cap City Fine Diner and Bar", "1299 Olentangy River Rd, Columbus, OH 43212", "/images/cap-city.jpg", american, bucaHashtags, best);
         restaurantRepo.save(capCity);
-        Restaurant teds = new Restaurant("Ted's Montana Grill", "191 W Nationwide Blvd, Columbus, OH 43215", "/images/mexicanfood.jpg", american, dueAmiciHashtags, best);
+        Restaurant teds = new Restaurant("Ted's Montana Grill", "191 W Nationwide Blvd, Columbus, OH 43215", "/images/teds-montana.jpg", american, dueAmiciHashtags, best);
         restaurantRepo.save(teds);
-        Restaurant hubbardGrille = new Restaurant("Hubbard Grille", "793 N High St, Columbus, OH 43215", "/images/mexicanfood.jpg", american, basiItaliaHashtags, best);
+        Restaurant hubbardGrille = new Restaurant("Hubbard Grille", "793 N High St, Columbus, OH 43215", "/images/hubbard.jpg", american, basiItaliaHashtags, best);
         restaurantRepo.save(hubbardGrille);
-        Restaurant skillet = new Restaurant("Skillet", "410 E Whittier St, Columbus, OH 43206", "/images/mexicanfood.jpg", american, pasqualoneHashtags, best);
+        Restaurant skillet = new Restaurant("Skillet", "410 E Whittier St, Columbus, OH 43206", "/images/skillet.jpg", american, pasqualoneHashtags, best);
         restaurantRepo.save(skillet);
-        Restaurant milestone = new Restaurant("Milestone 229", "229 S Civic Center Dr, Columbus, OH 43215", "/images/mexicanfood.jpg", american, marcellaHashtags, best);
+        Restaurant milestone = new Restaurant("Milestone 229", "229 S Civic Center Dr, Columbus, OH 43215", "/images/milestone.jpg", american, marcellaHashtags, best);
         restaurantRepo.save(milestone);
 
         // Chinese
-        Restaurant sunflower = new Restaurant("Sunflower Chinese Restaurant", "7370 Sawmill Rd, Columbus, OH 43235", "/images/mexicanfood.jpg", chinese, bucaHashtags, best);
+        Restaurant sunflower = new Restaurant("Sunflower Chinese Restaurant", "7370 Sawmill Rd, Columbus, OH 43235", "/images/sunflower.jpg", chinese, bucaHashtags, best);
         restaurantRepo.save(sunflower);
-        Restaurant neChinese = new Restaurant("NE Chinese Restaurant", "2620 N High St, Columbus, OH 43202", "/images/mexicanfood.jpg", chinese, dueAmiciHashtags, best);
+        Restaurant neChinese = new Restaurant("NE Chinese Restaurant", "2620 N High St, Columbus, OH 43202", "/images/ne-chinese.jpg", chinese, dueAmiciHashtags, best);
         restaurantRepo.save(neChinese);
-        Restaurant moy = new Restaurant("Moy's Chinese Restaurant", "1994 N High St, Columbus, OH 43201", "/images/mexicanfood.jpg", chinese, basiItaliaHashtags, best);
+        Restaurant moy = new Restaurant("Moy's Chinese Restaurant", "1994 N High St, Columbus, OH 43201", "/images/moys.jpg", chinese, basiItaliaHashtags, best);
         restaurantRepo.save(moy);
-        Restaurant luckyDragon = new Restaurant("Lucky Dragon", "2800 N High St, Columbus, OH 43202", "/images/mexicanfood.jpg", chinese, pasqualoneHashtags, best);
+        Restaurant luckyDragon = new Restaurant("Lucky Dragon", "2800 N High St, Columbus, OH 43202", "/images/lucky-dragon.jpg", chinese, pasqualoneHashtags, best);
         restaurantRepo.save(luckyDragon);
-        Restaurant helen = new Restaurant("Helen's Asian Kitchen", "1070 E Dublin Granville Rd, Columbus, OH 43229", "/images/mexicanfood.jpg", chinese, marcellaHashtags, best);
+        Restaurant helen = new Restaurant("Helen's Asian Kitchen", "1070 E Dublin Granville Rd, Columbus, OH 43229", "/images/helens.jpg", chinese, marcellaHashtags, best);
         restaurantRepo.save(helen);
 
         // Seafood
-        Restaurant kai = new Restaurant("Kai's Crab Boil", "839 Bethel Rd, Columbus, OH 43214", "/images/mexicanfood.jpg", seafood, bucaHashtags, best);
+        Restaurant kai = new Restaurant("Kai's Crab Boil", "839 Bethel Rd, Columbus, OH 43214", "/images/kais-crab.webp", seafood, bucaHashtags, best);
         restaurantRepo.save(kai);
-        Restaurant fishMarket = new Restaurant("Columbus Fish Market", "1245 Olentangy River Rd, Columbus, OH 43212", "/images/mexicanfood.jpg", seafood, dueAmiciHashtags, best);
+        Restaurant fishMarket = new Restaurant("Columbus Fish Market", "1245 Olentangy River Rd, Columbus, OH 43212", "/images/columbus-fish.jpg", seafood, dueAmiciHashtags, best);
         restaurantRepo.save(fishMarket);
-        Restaurant franks = new Restaurant("Frank's Fish And Seafood Carryout", "5249 Trabue Rd, Columbus, OH 43228", "/images/mexicanfood.jpg", seafood, basiItaliaHashtags, best);
+        Restaurant franks = new Restaurant("Frank's Fish And Seafood Carryout", "5249 Trabue Rd, Columbus, OH 43228", "/images/franks.jpg", seafood, basiItaliaHashtags, best);
         restaurantRepo.save(franks);
-        Restaurant shrimp = new Restaurant("Shrimp Lips", "1624 Parsons Ave, Columbus, OH 43207", "/images/mexicanfood.jpg", seafood, pasqualoneHashtags, best);
+        Restaurant shrimp = new Restaurant("Shrimp Lips", "1624 Parsons Ave, Columbus, OH 43207", "/images/shrimp-lips.webp", seafood, pasqualoneHashtags, best);
         restaurantRepo.save(shrimp);
-        Restaurant mitchell = new Restaurant("Mitchell's Ocean Club", "4002 Easton Station, Columbus, OH 43219", "/images/mexicanfood.jpg", seafood, marcellaHashtags, best);
+        Restaurant mitchell = new Restaurant("Mitchell's Ocean Club", "4002 Easton Station, Columbus, OH 43219", "/images/mitchell-oc.jpg", seafood, marcellaHashtags, best);
         restaurantRepo.save(mitchell);
 
         // Pizza
-        Restaurant borgata = new Restaurant("Borgata Pizza Cafe", "5701 Parkville St, Columbus, OH 43229", "/images/mexicanfood.jpg", pizza, bucaHashtags, best);
+        Restaurant borgata = new Restaurant("Borgata Pizza Cafe", "5701 Parkville St, Columbus, OH 43229", "/images/borgata-pizza-cafe.jpg", pizza, bucaHashtags, best);
         restaurantRepo.save(borgata);
-        Restaurant pizzaRustica = new Restaurant("Pizza Rustica", "17 S High St, Columbus, OH 43215", "/images/mexicanfood.jpg", pizza, dueAmiciHashtags, best);
+        Restaurant pizzaRustica = new Restaurant("Pizza Rustica", "17 S High St, Columbus, OH 43215", "/images/pizza-rustica.jpg", pizza, dueAmiciHashtags, best);
         restaurantRepo.save(pizzaRustica);
-        Restaurant hounddog = new Restaurant("Hounddog's Pizza", "2657 N High St, Columbus, OH 43202", "/images/mexicanfood.jpg", pizza, basiItaliaHashtags, best);
+        Restaurant hounddog = new Restaurant("Hounddog's Pizza", "2657 N High St, Columbus, OH 43202", "/images/hounddogs.jpg", pizza, basiItaliaHashtags, best);
         restaurantRepo.save(hounddog);
-        Restaurant adriatico = new Restaurant("Adriatico's New York Style Pizza", "1618 Neil Ave, Columbus, OH 43201", "/images/mexicanfood.jpg", pizza, pasqualoneHashtags, best);
+        Restaurant adriatico = new Restaurant("Adriatico's New York Style Pizza", "1618 Neil Ave, Columbus, OH 43201", "/images/adriaticos.jpg", pizza, pasqualoneHashtags, best);
         restaurantRepo.save(adriatico);
-        Restaurant goremade = new Restaurant("GoreMade Pizza", "936 N 4th St, Columbus, OH 43201", "/images/mexicanfood.jpg", pizza, marcellaHashtags, best);
+        Restaurant goremade = new Restaurant("GoreMade Pizza", "936 N 4th St, Columbus, OH 43201", "/images/gormade.webp", pizza, marcellaHashtags, best);
         restaurantRepo.save(goremade);
     }
 }
