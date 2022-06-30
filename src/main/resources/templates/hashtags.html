@@ -20,10 +20,8 @@
 
 
 <div class="hashtags-flex">
-    <div class="hashtags">
-        <div th:each="hashtag: ${hashtags}">
-            <a th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
-        </div>
+    <div class="hashtags" th:each="hashtag: ${hashtags}">
+        <a class="hashtag-name" th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
     </div>
 </div>
 

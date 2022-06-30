@@ -1,37 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${LosGuachos.name}">Restaurant Name</title>
-    <link rel="stylesheet"  href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
+
 <body>
 
 <div th:replace="fragments.html :: nav"></div>
 
-    <div class="container">
-        <h1 th:text="${LosGuachos.name}">Restaurant Name</h1>
-        <hr>
-        <h3 th:text="${LosGuachos.location}">Restaurant Location</h3>
-        <ul>
-            <div th:each="hashtag:${LosGuachos.hashtags}">
-                <a th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
-            </div>
-        </ul>
-        <hr>
-        <br>
-        <br>
-        <form th:action="'/restaurants/' + ${LosGuachos.id}+ '/addHashtag'" method="post">
-            <label for="hashtagID">Add a hashtag!:</label>
-            <input type="text" name="hashtag" id="hashtagID">
-            <input type="submit">
-        </form>
+<header>
+    <div class="title-flex">
+        <h1 th:text="${LosGuachos.name}"></h1>
     </div>
+</header>
+
+<div class="restaurant-info-flex">
+    <div class="restaurant-image"><img th:src="${LosGuachos.imgUrl}" width="700" height="465"></div>
+    <div class="restaurant-location"><h3 th:text="${LosGuachos.location}"></h3></div>
+</div>
+
+<div class="restaurant-hashtags-flex">
+    <div class="hashtags" th:each="hashtag: ${LosGuachos.hashtags}">
+        <a th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
+    </div>
+</div>
+
+<div class="title-flex">
+    <h1>Reviews</h1>
+</div>
+
+<div class="restaurant-reviews-flex">
+    <div class="reviews" th:each="review: ${LosGuachos.reviews}">
+        <a th:href="'/reviews/' + ${review.id}" th:text="${review.rating}"></a>
+    </div>
+</div>
+
+
+<form class="add-hashtag" th:action="'/restaurants/' + ${LosGuachos.id}+ '/addHashtag'" method="post">
+    <label for="hashtagID">Add a hashtag!: </label>
+    <input type="text" name="hashtag" id="hashtagID">
+    <input type="submit">
+</form>
 
 <div th:replace="fragments.html :: footer"></div>
 </body>
+
 </html>

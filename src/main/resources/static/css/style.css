@@ -40,14 +40,6 @@ li a {
     font-size: 20px;
 }
 
-li a:hover {
-    background-color: #111;
-}
-
-.active {
-    background-color: coral;
-}
-
 
 /* Titles for each page */
 
@@ -63,14 +55,18 @@ li a:hover {
 
 .title-flex h1 {
     width: 100%;
-    font-size: 50px;
+    font-size: 60px;
     display: block;
     padding: 18px;
     color: var(--color3);
     text-shadow: .04em .04em 0 rgb(151, 151, 151);
 }
 
+/* Cuisines page */
+
 .cuisines-flex {
+    background-color: var(--color5);
+    padding: 20px;
     margin-top: 40px;
     display: flex;
     flex-flow: row wrap;
@@ -80,59 +76,207 @@ li a:hover {
     margin-right: 10%;
 }
 
-.cuisine-image {
+.cuisines img {
     padding: 5px;
     filter: blur(2px) brightness(75%);
-    border: 5px solid var(--color3);
+    border: 5px solid coral;
 }
 
 .cuisines {
     position: relative;
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.text {
+.cuisine-name {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-weight: 600;
 }
 
-.text a {
+.cuisines-flex a {
     text-decoration: none;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
 }
 
+/* HASHTAGS */
 
 .hashtags-flex {
+    background-color: var(--color5);
+    padding: 30px;
     margin-top: 40px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: space-evenly;
     align-items: center;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: coral;
-}
-.restaurants-flex {
-    margin-top: 40px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: coral;
 }
 
+.hashtags {
+    position: relative;
+    text-align: center;
+}
+
+.hashtags-flex a {
+    text-decoration: none;
+    color: coral;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+/* Restaurants */
+
+.restaurants-flex {
+    background-color: var(--color5);
+    padding: 30px;
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+.restaurants img {
+    padding: 5px;
+    filter: blur(2px) brightness(75%);
+    border: 5px solid coral;
+}
+
+.restaurants {
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.restaurant-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+}
+
+.restaurants-flex a {
+    text-decoration: none;
+    color: coral;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+/* Restaurant Info */
+
+.restaurant-info-flex {
+    background-color: var(--color5);
+    padding: 30px;
+    margin-top: 40px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.restaurant-location h3 {
+    text-decoration: none;
+    color: coral;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* Restaurant Hashtags */
+
+.restaurant-hashtags-flex {
+    background-color: var(--color5);
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    position: fixed;
+    bottom: 60px;
+    margin-left: 10%;
+    margin-right: 10%;
+    flex-flow: row wrap;
+}
+
+.restaurant-hashtags-flex a {
+    text-decoration: none;
+    color: coral;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+body {
+    height: 400vh;
+}
+
+/* Restaurant Reviews */
+
+.restaurant-reviews-flex {
+    background-color: var(--color5);
+    padding: 30px;
+    margin-top: 80px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.reviews {
+    position: relative;
+    text-align: center;
+}
+
+.reviews a {
+    text-decoration: none;
+    color: coral;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* Add a hashtag to a restaurant */
+
+.add-hashtag {
+    background-color: var(--color5);
+    width: 80%;
+    padding: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: fixed;
+    bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.add-hashtag label {
+    text-decoration: none;
+    color: coral;
+    font-size: 16px;
+}
+
+/* Footer */
 
 footer {
     width: 100%;
     background-color: coral;
     color: white;
-    height: 40px;
-    font-size: 24px;
+    height: 25px;
+    font-size: 15px;
     text-align: center;
     position: fixed;
     bottom: 0;

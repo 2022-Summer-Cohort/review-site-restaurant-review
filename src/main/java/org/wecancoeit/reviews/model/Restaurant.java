@@ -14,6 +14,7 @@ public class Restaurant {
     private long id;
     private String name;
     private String location;
+    private String imgUrl;
 
     @ManyToOne
     private Cuisine cuisine;
@@ -22,9 +23,10 @@ public class Restaurant {
     @ManyToMany
     private Collection<Review> reviews;
 
-    public Restaurant(String name, String location, Cuisine cuisine, List<Hashtag> hashtags, Review... reviews) {
+    public Restaurant(String name, String location, String imgUrl, Cuisine cuisine, List<Hashtag> hashtags, Review... reviews) {
         this.name = name;
         this.location = location;
+        this.imgUrl = imgUrl;
         this.cuisine = cuisine;
         this.hashtags = hashtags;
         this.reviews = Arrays.asList(reviews);
@@ -47,6 +49,10 @@ public class Restaurant {
 
     public String getLocation() {
         return location;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
     }
 
     public Cuisine getCuisine() {

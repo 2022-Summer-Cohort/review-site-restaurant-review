@@ -19,11 +19,9 @@
 </header>
 
 <div class="cuisines-flex">
-    <div class="cuisines">
-        <div th:each="cuisine: ${cuisines}">
-            <a class="text" th:href="'/cuisines/' + ${cuisine.id}" th:text="${cuisine.foodType}"></a>
-                <img class="cuisine-image" th:src="${cuisine.imgUrl}" width="300" height="185">
-        </div>
+    <div class="cuisines" th:each="cuisine: ${cuisines}">
+        <img th:src="${cuisine.imgUrl}" width="300" height="185">
+        <a class="cuisine-name" th:href="'/cuisines/' + ${cuisine.id}" th:text="${cuisine.foodType}"></a>
     </div>
 </div>
 
