@@ -17,16 +17,16 @@ public class HashtagController {
         this.hashtagRepo = hashtagRepo;
     }
 
+    @RequestMapping("/hashtags/")
+    public String showAllHashtags(Model model) {
+        model.addAttribute("hashtags", hashtagRepo.findAll());
+        return "hashtags";
+    }
+
     @RequestMapping("/hashtags/{id}")
     private String showHashtag(Model model, @PathVariable long id) {
         model.addAttribute("hashtag", hashtagRepo.findById(id).get());
         return "hashtag";
     }
-
-//    @RequestMapping("/reviews/hashtags")
-//    public String getHashtags(Model model) {
-//        model.addAttribute("hashtags", hashtagRepo.getAllHashtags());
-//        return "hashtags";
-//    }
 
 }

@@ -11,16 +11,7 @@
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="/">Cuisines</a>
-            </li>
-            <li>
-                <a href="/hashtags.html">Hashtags</a>
-            </li>
-        </ul>
-    </nav>
+<div th:replace="fragments.html :: nav"></div>
 
     <div class="container">
         <h1 th:text="${LosGuachos.name}">Restaurant Name</h1>
@@ -35,7 +26,7 @@
         <br>
         <br>
         <form th:action="'/restaurants/' + ${LosGuachos.id}+ '/addHashtag'" method="post">
-            <label for="hashtagID">Enter a review!:</label>
+            <label for="hashtagID">Add a hashtag!:</label>
             <input type="text" name="hashtag" id="hashtagID">
             <input type="submit">
         </form>

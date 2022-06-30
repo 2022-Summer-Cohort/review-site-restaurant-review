@@ -80,7 +80,7 @@ li a:hover {
     margin-right: 10%;
 }
 
-.cuisines img {
+.cuisine-image {
     padding: 5px;
     filter: blur(2px) brightness(75%);
     border: 5px solid var(--color3);
@@ -92,7 +92,6 @@ li a:hover {
 }
 
 .text {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -104,6 +103,19 @@ li a:hover {
     color: white;
     font-size: 30px;
 }
+
+
+.hashtags-flex {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: coral;
+}
+
 
 footer {
     width: 100%;

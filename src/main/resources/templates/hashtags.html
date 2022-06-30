@@ -14,23 +14,19 @@
 
 <header>
     <div class="title-flex">
-        <h1>Cuisines</h1>
+        <h1>Hashtags</h1>
     </div>
 </header>
 
-<div class="cuisines-flex">
-    <div class="cuisines">
-        <div th:each="cuisine: ${cuisines}">
-            <a class="text" th:href="'/cuisines/' + ${cuisine.id}" th:text="${cuisine.foodType}"></a>
-                <img class="cuisine-image" th:src="${cuisine.imgUrl}" width="300" height="185">
+
+<div class="hashtags-flex">
+    <div class="hashtags">
+        <div th:each="hashtag: ${hashtags}">
+            <a th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
         </div>
     </div>
 </div>
 
-
-
-
 <div th:replace="fragments.html :: footer"></div>
 </body>
 
-</html>

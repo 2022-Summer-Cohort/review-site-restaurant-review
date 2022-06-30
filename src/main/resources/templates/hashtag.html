@@ -8,13 +8,22 @@
 </head>
 
 <body>
+<div th:replace="fragments.html :: nav"></div>
 
-<h1 th:text="${hashtag.name}"></h1>
-<ul>
-  <li th:each="restaurant: ${hashtag.restaurants}">
-    <a th:text="${restaurant.name}" th:href="'/restaurants/' + ${restaurant.id}"></a>
-  </li>
-</ul>
+<header>
+  <div class="title-flex">
+    <h1>Hashtags</h1>
+  </div>
+</header>
+
+
+<div class="hashtags-flex">
+  <div class="hashtags">
+    <div th:each="hashtag: ${hashtag.restaurants}">
+      <a th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
+    </div>
+  </div>
+</div>
 
 </body>
 
