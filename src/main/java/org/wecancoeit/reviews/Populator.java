@@ -12,6 +12,8 @@ import org.wecancoeit.reviews.repos.RestaurantRepository;
 import org.wecancoeit.reviews.repos.ReviewRepository;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Component
