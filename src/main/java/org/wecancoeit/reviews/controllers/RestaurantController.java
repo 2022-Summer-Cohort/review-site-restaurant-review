@@ -36,6 +36,11 @@ public class RestaurantController {
         model.addAttribute("restaurants", restaurantRepo.findAll());
         return "allRestaurants";
     }
+    @RequestMapping("/restaurants/{id}") //remove if doesnt work
+    public String findByID(Model model, @PathVariable long id) {
+        model.addAttribute("cuisine", restaurantRepo.findById(id).get());
+        return "restaurant";
+    }
     @PostMapping("/{id}/addReview")
     public String addReviewToRestaurant(@PathVariable Long id, @RequestParam String review) {
         Restaurant restaurant = restaurantRepo.findById(id).get();

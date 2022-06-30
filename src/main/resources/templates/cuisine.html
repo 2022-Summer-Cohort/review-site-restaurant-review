@@ -15,7 +15,10 @@
     <hr>
     <div class="container">
         <ul>
-            <li th:each="restaurant:${cuisine.restaurants}" th:text="${restaurant.name}"></li>
+            <div th:each="restaurant:${cuisine.restaurants}">
+            <a th:href="'/restaurants/' + ${restaurant.id}" th:text="${restaurant.name}"></a>
+
+            </div>
         </ul>
     </div>
     <hr>
