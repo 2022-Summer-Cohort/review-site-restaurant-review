@@ -1,5 +1,8 @@
 package org.wecancoeit.reviews.model;
 
+import com.sun.xml.bind.v2.schemagen.xmlschema.List;
+import org.w3c.dom.stylesheets.LinkStyle;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +20,8 @@ public class Hashtag {
 
     public Hashtag(String name) {
         this.name = name;
+
+
     }
 
     public Hashtag() {
@@ -29,6 +34,8 @@ public class Hashtag {
     public String getName() {
         return name;
     }
+
+
 
     public Collection<Restaurant> getRestaurants() {
         return restaurants;

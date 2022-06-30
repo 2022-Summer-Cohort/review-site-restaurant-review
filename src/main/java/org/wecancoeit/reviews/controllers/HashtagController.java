@@ -23,4 +23,10 @@ public class HashtagController {
         return "hashtag";
     }
 
+//    @RequestMapping("/reviews/hashtags")
+//    public String getHashtags(Model model) {
+//        model.addAttribute("hashtags", hashtagRepo.getAllHashtags());
+//        return "hashtags";
+//    }
+
 }
