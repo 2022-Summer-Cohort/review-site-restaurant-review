@@ -194,21 +194,24 @@ li a {
 
 .restaurant-hashtags-flex {
     background-color: var(--color5);
-    width: 80%;
-    padding: 10px;
+    padding: 30px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    align-content: center;
-    position: fixed;
-    bottom: 60px;
     margin-left: 10%;
     margin-right: 10%;
-    flex-flow: row wrap;
 }
 
-.restaurant-hashtags-flex a {
+.hashtags {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    position: relative;
+    text-align: center;
+}
+
+.hashtags a {
     text-decoration: none;
     color: coral;
     font-size: 16px;
@@ -217,7 +220,7 @@ li a {
 
 
 body {
-    height: 400vh;
+    height: 100vh;
 }
 
 /* Restaurant Reviews */
@@ -225,7 +228,6 @@ body {
 .restaurant-reviews-flex {
     background-color: var(--color5);
     padding: 30px;
-    margin-top: 80px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -235,6 +237,9 @@ body {
 }
 
 .reviews {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
     position: relative;
     text-align: center;
 }

@@ -25,12 +25,6 @@
     <div class="restaurant-location"><h3 th:text="${LosGuachos.location}"></h3></div>
 </div>
 
-<div class="restaurant-hashtags-flex">
-    <div class="hashtags" th:each="hashtag: ${LosGuachos.hashtags}">
-        <a th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
-    </div>
-</div>
-
 <div class="title-flex">
     <h1>Reviews</h1>
 </div>
@@ -41,12 +35,23 @@
     </div>
 </div>
 
+<div class="title-flex">
+    <h1>Hashtags</h1>
+</div>
 
-<form class="add-hashtag" th:action="'/restaurants/' + ${LosGuachos.id}+ '/addHashtag'" method="post">
-    <label for="hashtagID">Add a hashtag!: </label>
-    <input type="text" name="hashtag" id="hashtagID">
-    <input type="submit">
-</form>
+<div class="restaurant-hashtags-flex">
+    <div class="hashtags" th:each="hashtag: ${LosGuachos.hashtags}">
+        <a th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
+    </div>
+</div>
+
+<br><br><br><br>
+
+<!--<form class="add-hashtag" th:action="'/restaurants/' + ${LosGuachos.id}+ '/addHashtag'" method="post">-->
+<!--    <label for="hashtagID">Add a hashtag!: </label>-->
+<!--    <input type="text" name="hashtag" id="hashtagID">-->
+<!--    <input type="submit">-->
+<!--</form>-->
 
 <div th:replace="fragments.html :: footer"></div>
 </body>
