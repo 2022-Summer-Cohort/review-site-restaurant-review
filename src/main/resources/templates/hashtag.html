@@ -20,7 +20,7 @@
 <div class="hashtags-flex">
   <div class="hashtags">
     <div th:each="hashtag: ${hashtag.restaurants}">
-      <a th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
+      <a th:href="'/restaurants/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
     </div>
   </div>
 </div>
