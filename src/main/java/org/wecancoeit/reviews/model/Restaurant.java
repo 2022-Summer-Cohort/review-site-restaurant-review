@@ -32,40 +32,32 @@ public class Restaurant {
         this.reviews = Arrays.asList(reviews);
     }
 
-    public Restaurant() {
-    }
-
-    public void addHashtag(Hashtag hashtag) {
-        hashtags.add(hashtag);
-    }
-
-    public String getName() {
-        return name;
-    }
-
+    public Restaurant() {}
     public long getId() {
         return id;
     }
-
+    public String getName() {
+        return name;
+    }
     public String getLocation() {
         return location;
     }
-
     public String getImgUrl() {
         return imgUrl;
     }
-
     public Cuisine getCuisine() {
         return cuisine;
     }
-
     public List<Hashtag> getHashtags() {
         return hashtags;
     }
     public Collection<Review> getReviews() {
         return reviews;
     }
-
-    public void addReview(Review review) {
+    public void addHashtag(Hashtag newHashtag) {
+        hashtags.add(newHashtag);
+    }
+    public void addReview(Review newReview) {
+        reviews.add(newReview);
     }
 }

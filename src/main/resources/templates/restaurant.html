@@ -47,6 +47,13 @@
 
 <br><br><br><br>
 
+
+<form class="add-hashtag" th:action="'/restaurants/' + ${LosGuachos.id} + '/addHashtag'" method="post">
+    <label for="hashtagID">Add a hashtag!: </label>
+    <input type="text" name="hashtag" id="hashtagID">
+    <input type="submit">
+</form>
+
 <!--<form class="add-hashtag" th:action="'/restaurants/' + ${LosGuachos.id}+ '/addHashtag'" method="post">-->
 <!--    <label for="hashtagID">Add a hashtag!: </label>-->
 <!--    <input type="text" name="hashtag" id="hashtagID">-->
