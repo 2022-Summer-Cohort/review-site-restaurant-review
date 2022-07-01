@@ -7,6 +7,7 @@ import java.util.Optional;
 
 
 public interface ReviewRepository extends CrudRepository<Review, Long>{
-
-    Optional<Review> findByRatingIgnoreCase(String review);
+    Optional<Review> findByTitleIgnoreCase(String review);
+    Optional<Review> findReviewByScore(int score);
+    Optional<Review> findReviewByRating(String rating);
 }

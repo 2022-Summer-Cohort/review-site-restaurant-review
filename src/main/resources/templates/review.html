@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${review.rating}">Name</title>
+    <title th:text="${review.title}">Title</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -11,20 +11,15 @@
 <div th:replace="fragments.html :: nav"></div>
 
 <div class="title-flex">
-    <h1 th:text="${review.rating}"></h1>
+    <h1 th:text="${review.title}"></h1>
 </div>
 
-<div class="restaurants-flex">
-    <div class="restaurants" th:each="review: ${review.restaurants}">
-        <img th:src="${review.imgUrl}" width="300" height="185">
-        <a class="restaurant-name" th:href="'/restaurants/' + ${review.id}" th:text="${review.name}"></a>
-    </div>
-</div>
+<br><br><br>
 
-<ul>
-    <li th:each="restaurant: ${review.restaurants}">
-        <a th:text="${restaurant.name}" th:href="'/restaurants/' + ${restaurant.id}"></a>
-</ul>
+<div class="review-rating">
+    <h1 th:text="${review.score} + '✰'"></h1>
+    <p th:text="${review.rating}"></p>
+</div>
 
 <div th:replace="fragments.html :: footer"></div>
 

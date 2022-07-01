@@ -60,15 +60,15 @@ public class RestaurantController {
     }
 
     @PostMapping("/{id}/addReview")
-    public String addReviewToRestaurant(@PathVariable Long id, @RequestParam String review) {
+    public String addReviewToRestaurant(@PathVariable Long id, @RequestParam String title, @RequestParam int score, @RequestParam String rating) {
         Restaurant restaurant = restaurantRepo.findById(id).get();
-        Optional<Review> reviewOptional = reviewRepo.findByRatingIgnoreCase(review);
+        Optional<Review> reviewOptional = reviewRepo.findByTitleIgnoreCase(title);
         if (reviewOptional.isPresent()) {
             if (!restaurant.getReviews().contains(reviewOptional.get())) {
                 restaurant.addReview(reviewOptional.get());
             }
         } else {
-            Review review1 = new Review(review);
+            Review review1 = new Review(title, score, rating);
             reviewRepo.save(review1);
             restaurant.addReview(review1);
         }

@@ -31,13 +31,17 @@
 
 <div class="restaurant-reviews-flex">
     <div class="reviews" th:each="review: ${LosGuachos.reviews}">
-        <a th:href="'/reviews/' + ${review.id}" th:text="${review.rating}"></a>
+        <a th:href="'/reviews/' + ${review.id}" th:text="${review.title}"></a>
     </div>
 </div>
 
 <form class="add-review" th:action="'/restaurants/' + ${LosGuachos.id} + '/addReview'" method="post">
-    <label for="reviewID">Add a review!: </label>
-    <input type="text" name="review" id="reviewID">
+    <label for="reviewTitle">Title: </label>
+    <input type="text" name="title" id="reviewTitle">
+    <label for="reviewScore">Score: </label>
+    <input type="number" name="score" id="reviewScore">
+    <label for="reviewRating">Rating: </label>
+    <input type="text" name="rating" id="reviewRating">
     <input type="submit">
 </form>
 
@@ -53,7 +57,6 @@
 
 <br><br><br><br><br><br>
 <br><br><br><br><br><br>
-
 
 
 <form class="add-hashtag" th:action="'/restaurants/' + ${LosGuachos.id} + '/addHashtag'" method="post">

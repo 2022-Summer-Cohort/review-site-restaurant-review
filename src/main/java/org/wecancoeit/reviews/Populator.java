@@ -47,13 +47,13 @@ public class Populator implements CommandLineRunner {
         cuisineRepo.save(pizza);
 
         // All the reviews
-        Review best = new Review("Best");
+        Review best = new Review("Best", 5, "Best place to eat");
         reviewRepo.save(best);
-        Review good = new Review("Good");
+        Review good = new Review("Good", 4, "Solid place to eat");
         reviewRepo.save(good);
-        Review fair = new Review("Fair");
+        Review fair = new Review("Fair", 2, "Wont be coming often");
         reviewRepo.save(fair);
-        Review poor = new Review("Poor");
+        Review poor = new Review("Poor", 1, "Do not eat here");
         reviewRepo.save(poor);
 
         // All the hashtags
