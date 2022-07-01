@@ -35,15 +35,18 @@
     </div>
 </div>
 
-<form class="add-review" th:action="'/restaurants/' + ${LosGuachos.id} + '/addReview'" method="post">
-    <label for="reviewTitle">Title: </label>
-    <input type="text" name="title" id="reviewTitle">
-    <label for="reviewScore">Score: </label>
-    <input type="number" name="score" id="reviewScore">
-    <label for="reviewRating">Rating: </label>
-    <input type="text" name="rating" id="reviewRating">
-    <input type="submit">
-</form>
+<div class="new-review">
+    <h3>Add a review →</h3>
+    <form class="add-review" th:action="'/restaurants/' + ${LosGuachos.id} + '/addReview'" method="post">
+        <label for="reviewTitle">Title: </label>
+        <input type="text" name="title" id="reviewTitle">
+        <label for="reviewScore">Score: </label>
+        <input type="number" name="score" id="reviewScore">
+        <label for="reviewRating">Rating: </label>
+        <input type="text" name="rating" id="reviewRating">
+        <input type="submit">
+    </form>
+</div>
 
 <div class="title-flex">
     <h1>Hashtags</h1>
