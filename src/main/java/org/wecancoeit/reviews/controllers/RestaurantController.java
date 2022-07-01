@@ -43,7 +43,6 @@ public class RestaurantController {
 
     @PostMapping("/{id}/addHashtag")
     public String addHashtagToRestaurant(@PathVariable Long id, @RequestParam String hashtag) {
-
         Restaurant restaurant = restaurantRepo.findById(id).get();
         Optional<Hashtag> hashtagOptional = hashtagRepo.findByNameIgnoreCase(hashtag);
         if (hashtagOptional.isPresent()) {
@@ -60,38 +59,22 @@ public class RestaurantController {
         return "redirect:/restaurants/"+id;
     }
 
-//    @PostMapping("/{id}/addHashtag")
-//    public String addHashtagToRestaurant(@PathVariable long id, @RequestParam String hashtag) {
-//        Restaurant restaurant = restaurantRepo.findById(id).get();
-//        Optional<Hashtag> hashtagOptional = hashtagRepo.findByNameIgnoreCase(hashtag);
-//        if (!hashtagOptional.isPresent()) {
-//            if(!restaurant.getHashtags().contains(hashtagOptional.get())) {
-//                restaurant.addHashtag(hashtagOptional.get());
-//            }
-//        } else {
-//            Hashtag hashtag1 = new Hashtag(hashtag);
-//            hashtagRepo.save(hashtag1);
-//            restaurant.addHashtag(hashtag1);
-//        }
-//        restaurantRepo.save(restaurant);
-//        return "redirect:/restaurants/"+id;
-//    }
-//
-//    @PostMapping("/{id}/addReview")
-//    public String addReviewToRestaurant(@PathVariable Long id, @RequestParam String review) {
-//        Restaurant restaurant = restaurantRepo.findById(id).get();
-//        Optional<Review> reviewOptional = reviewRepo.findByRatingIgnoreCase(review);
-//        if (!reviewOptional.isPresent()) {
-//            if (!restaurant.getReviews().contains(reviewOptional.get())) {
-//                 restaurant.addReview(reviewOptional.get());
-//            }
-//        }
-//        else {
-//            Review review1 = new Review(review);
-//            reviewRepo.save(review1);
-//            restaurant.addReview(review1);
-//        }
-//        restaurantRepo.save(restaurant);
-//        return "redirect:/restaurants/"+id;
-//    }
+    @PostMapping("/{id}/addReview")
+    public String addReviewToRestaurant(@PathVariable Long id, @RequestParam String review) {
+        Restaurant restaurant = restaurantRepo.findById(id).get();
+        Optional<Review> reviewOptional = reviewRepo.findByRatingIgnoreCase(review);
+        if (reviewOptional.isPresent()) {
+            if (!restaurant.getReviews().contains(reviewOptional.get())) {
+                restaurant.addReview(reviewOptional.get());
+            }
+        } else {
+            Review review1 = new Review(review);
+            reviewRepo.save(review1);
+            restaurant.addReview(review1);
+        }
+        restaurantRepo.save(restaurant);
+
+        return "redirect:/restaurants/"+id;
+    }
+
 }

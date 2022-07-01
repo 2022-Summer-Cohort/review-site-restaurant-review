@@ -35,6 +35,12 @@
     </div>
 </div>
 
+<form class="add-review" th:action="'/restaurants/' + ${LosGuachos.id} + '/addReview'" method="post">
+    <label for="reviewID">Add a review!: </label>
+    <input type="text" name="review" id="reviewID">
+    <input type="submit">
+</form>
+
 <div class="title-flex">
     <h1>Hashtags</h1>
 </div>
@@ -45,7 +51,9 @@
     </div>
 </div>
 
-<br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
 
 
 <form class="add-hashtag" th:action="'/restaurants/' + ${LosGuachos.id} + '/addHashtag'" method="post">
@@ -53,12 +61,6 @@
     <input type="text" name="hashtag" id="hashtagID">
     <input type="submit">
 </form>
-
-<!--<form class="add-hashtag" th:action="'/restaurants/' + ${LosGuachos.id}+ '/addHashtag'" method="post">-->
-<!--    <label for="hashtagID">Add a hashtag!: </label>-->
-<!--    <input type="text" name="hashtag" id="hashtagID">-->
-<!--    <input type="submit">-->
-<!--</form>-->
 
 <div th:replace="fragments.html :: footer"></div>
 </body>
