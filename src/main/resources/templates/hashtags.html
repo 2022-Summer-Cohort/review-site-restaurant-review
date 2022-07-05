@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>The Cuisine Scene</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div th:replace="fragments.html :: nav"></div>
+
+<header>
+    <div class="title-flex">
+        <h1>Hashtags</h1>
+    </div>
+</header>
+
+
+<div class="hashtags-flex">
+    <div class="hashtags" th:each="hashtag: ${hashtags}">
+        <a class="hashtag-name" th:href="'/hashtags/' + ${hashtag.id}" th:text="${hashtag.name}"></a>
+    </div>
+</div>
+
+<div th:replace="fragments.html :: footer"></div>
+</body>
+

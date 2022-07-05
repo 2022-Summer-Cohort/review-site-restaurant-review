@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${review.title}">Title</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div th:replace="fragments.html :: nav"></div>
+
+<div class="title-flex">
+    <h1 th:text="${review.title}"></h1>
+</div>
+
+<br><br><br>
+
+<div class="review-rating">
+    <h1 th:text="${review.score} + '✰'"></h1>
+    <p th:text="${review.rating}"></p>
+</div>
+
+<div th:replace="fragments.html :: footer"></div>
+
+</body>
+</html>
